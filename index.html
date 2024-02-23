@@ -9,19 +9,18 @@
 body { 
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #F8F8F8
+  background-color: #FAF9F6
 }
 
 .header {
   overflow: hidden;
-  background-color: lightblue;
-  border-radius: 10px;
-  padding: 20px 10px;
+  background-color: black;
+  padding: 20px;
 }
 
 .header a {
   float: left;
-  color: black;
+  color: white;
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -42,7 +41,9 @@ body {
 .header-link {
   font-family: "Montserrat";
   font-size: 30px;
-  padding-left: 40px;
+  padding-left: 50px;
+  color: white;
+  margin-left: 50px;
 }
 .body1 {
 
@@ -50,8 +51,10 @@ body {
   align-self: center;
   padding-left: 200px;
   padding-top: 80px;
-  font-size: 50px;
+  font-size: xx-large;
   font-family: "Montserrat";
+  color: white;
+  margin-left: 50px;
 }
 .body2 {
     float: center;
@@ -62,7 +65,40 @@ body {
     font-family: "Montserrat";
     
 }
+.news-ticker {
+    position: fixed;
 
+
+}
+
+.news-ticker ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    animation: scroll 20s infinite linear;
+}
+.news-ticker ul li {
+    white-space: nowrap;
+    padding: 10px 24px;
+    color: grey;
+
+}
+.news-ticker ul li:last-child::after {
+    display: none;
+}
+.news-ticker ul li::after {
+    content: "";
+    list-style: none;
+    position: relative;
+}
+@keyframes scroll {
+    from {
+        transform: translateX(380%);
+    }
+    to {
+        transform: translateX(-620px);
+    }
+}
 
 </style>
 </head>
@@ -71,12 +107,27 @@ body {
 <div class="header">
     <a class="body1" href="index.html">The Issaquah Gazette</a>
   <div class="header-right">
+    <a class = "header-link" href="about.html">Sports</a>
+    <a class = "header-link" href="about.html">World</a>
+    <a class = "header-link" href="about.html">School</a>
+    <a class = "header-link" href="about.html">Finance</a>
     <a class="header-link" href="articles.html">Articles</a>
     <a class = "header-link" href="about.html">About</a>
   </div>
 </div>
-<div class="body1">Who Are We?</div>
-<div class="body2">We are a student-run newspaper based out of Issaquah High School. We write about our school and things that interest us.</div>
+<div class="news-ticker">
+    <ul>
+        <li>
+            Nvidia shares skyrocket
+        </li>
+        <li>
+            Gaza war continues
+        </li>
+        <li>
+            IDK some other headline
+        </li>
+    </ul>
+</div>
 
 </body>
 </html>
